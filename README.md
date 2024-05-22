@@ -20,10 +20,11 @@ przy recenzji tego fragmentu?
 
 ## Rozwiązanie:
 1. Brak obsługi błędów - w przypadku kiedy wartość zmiennej wyniesie null, następna linijka rzuci błędem NullReferenceException.
-2. Niepoprawny zwracany typ - metoda powinna zwracać odpowiednią odpowiedź HTTP, dla kontrolera odpowiednim zwracanym typem będzie IActionResult.
-3. Użycie Loggera - mały błąd, ale warty zwrócenia uwagi. Logger pozwala na znacznie lepsze wypisywanie logów, posiada poziomy logów (error, info itp.) lub może przestawić je w postaci np. JSONa.
-4. Autoryzacja - bezpośrednie działanie na bazie danych, a zwłaszcza usuwanie rekordów z niej powinno być autoryzowane aby z funkcji tej mógł użyć tylko odpowiedni użytkownik np. admin.
-5. Asynchroniczność - dodanie asynchroniczności pozwoli aplikacji m.in. na jednoczesną obsługę większej liczby żądań oraz zapewni lepszą responsywność.
+2. Niepoprawne zapytanie HTTP - zamiast POST powinniśmy użyć DELETE.
+3. Niepoprawny zwracany typ - metoda powinna zwracać odpowiednią odpowiedź HTTP, dla kontrolera odpowiednim zwracanym typem będzie IActionResult.
+4. Użycie Loggera - mały błąd, ale warty zwrócenia uwagi. Logger pozwala na znacznie lepsze wypisywanie logów, posiada poziomy logów (error, info itp.) lub może przestawić je w postaci np. JSONa.
+5. Autoryzacja - bezpośrednie działanie na bazie danych, a zwłaszcza usuwanie rekordów z niej powinno być autoryzowane aby z funkcji tej mógł użyć tylko odpowiedni użytkownik np. admin.
+6. Asynchroniczność - dodanie asynchroniczności pozwoli aplikacji m.in. na jednoczesną obsługę większej liczby żądań oraz zapewni lepszą responsywność.
 
 Po zastosowaniu tych komentarzy kod powinien wyglądać niewięcej tak:
 ```
